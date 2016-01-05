@@ -6,7 +6,7 @@ if (document.domain == "facebook.com") {
     var uri = $('a._58cn').attr('href');
     $('a._58cn').replaceWith('<a href="' + uri  + '">.</a>');
     $("#timeline_tab_content").bind("DOMSubtreeModified", stripHashFacebook);
-  });
+  };
   stripHashFacebook();
 }
 
@@ -23,5 +23,5 @@ if (document.domain == "www.instagram.com") {
     });
     $("body").bind("DOMSubtreeModified", stripHashInstagram);
   };
-  stripHash();
+  stripHashInstagram();
 }
