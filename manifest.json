@@ -6,7 +6,8 @@
     {
       "matches": [
         "https://www.facebook.com/*",
-        "https://www.instagram.com/*"
+        "https://www.instagram.com/*",
+        "https://twitter.com/*"
       ],
       "js": ["jquery-2.1.4.min.js", "hashnag.js"]
     }

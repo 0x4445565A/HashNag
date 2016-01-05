@@ -25,3 +25,15 @@ if (document.domain == "www.instagram.com") {
   };
   stripHashInstagram();
 }
+
+
+if (document.domain == "twitter.com") {
+  var stripHashTwitter = function() {
+    $("body").unbind("DOMSubtreeModified");
+    $('a.twitter-hashtag').each(function() {
+      $(this).replaceWith('.');
+    });
+    $("body").bind("DOMSubtreeModified", stripHashTwitter);
+  };
+  stripHashTwitter();
+}
