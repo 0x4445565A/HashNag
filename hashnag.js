@@ -8,15 +8,17 @@ if (document.domain == "facebook.com") {
 }
 
 if (document.domain == "www.instagram.com") {
-  console.log('whaaaaaaat');
-  /*$("body").bind("DOMSubtreeModified", function() {
-    $('._nk46a a:not(._4zhc5)').remove();
-    /*$('._nk46a a').each(function() {
-      if ($(this).text().charAt(0) == "#") {
-        $(this).replaceWith('');
+  var stripHash = function() {
+    $("body").unbind("DOMSubtreeModified");
+    $('article ul li._nk46a a').each(function() {
+      var hashClassCheck = $(this).attr("class");
+      if ($(this).attr('href').indexOf("/explore/tags/") > -1
+          && typeof hashClassCheck === 'undefined') {
+        var uri = $(this).attr('href');
+        $(this).replaceWith('<a href="' + uri  + '">.</a>');
       }
-    });*/
-    //$('a._58cn').replaceWith('<a href="' + uri  + '">.</a>');
-  });
-
+    });
+    $("body").bind("DOMSubtreeModified", stripHash);
+  };
+  stripHash();
 }
