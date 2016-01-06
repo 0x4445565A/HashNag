@@ -1,5 +1,9 @@
 // HashNag.js
 var main = function() {
+  if (hashNagSetting == "allow") {
+    // Why would you do this...
+    return;
+  }
   if (document.domain == "facebook.com") {
     var stripHashFacebook = function() {
       $("#timeline_tab_content").unbind("DOMSubtreeModified");
