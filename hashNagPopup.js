@@ -1,4 +1,5 @@
 var hashNagSetting;
+
 chrome.storage.sync.get("hashNagSetting", function(obj) {
   hashNagSetting = obj.hashNagSetting;
   $('input[value="' + hashNagSetting + '"]').click();

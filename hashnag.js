@@ -1,5 +1,4 @@
 // HashNag.js
-
 var main = function() {
   if (document.domain == "facebook.com") {
     var stripHashFacebook = function() {
@@ -78,4 +77,11 @@ var hashNagSetting;
 chrome.storage.sync.get("hashNagSetting", function(obj) {
   hashNagSetting = obj.hashNagSetting;
   main();
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  chrome.storage.sync.get("hashNagSetting", function(obj) {
+    hashNagSetting = obj.hashNagSetting;
+  });
+  setTimeout(main, 2000);
 });
