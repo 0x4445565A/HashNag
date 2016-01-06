@@ -6,7 +6,7 @@ var main = function() {
   }
   if (document.domain == "facebook.com") {
     var stripHashFacebook = function() {
-      $("#timeline_tab_content").unbind("DOMSubtreeModified");
+      $("body").unbind("DOMSubtreeModified");
       switch (hashNagSetting) {
         case 'remove':
           $('a._58cn').remove();
@@ -21,7 +21,7 @@ var main = function() {
           var uri = $('a._58cn').attr('href');
           $('a._58cn').replaceWith('<a href="' + uri  + '">.</a>');
       }
-      $("#timeline_tab_content").bind("DOMSubtreeModified", stripHashFacebook);
+      $("body").bind("DOMSubtreeModified", stripHashFacebook);
     };
     stripHashFacebook();
   }
@@ -87,5 +87,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   chrome.storage.sync.get("hashNagSetting", function(obj) {
     hashNagSetting = obj.hashNagSetting;
   });
-  setTimeout(main, 2000);
+  setTimeout(main, 500);
 });
