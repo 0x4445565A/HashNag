@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>#HashNag</title>
+  <style>
+    html {
+      min-width: 300px;
+    }
+    main {
+      padding: 0 2px;
+      margin-bottom: 2em;
+    }
+    footer {
+      font-size: .75em;
+      color: rgb(100, 100, 100);
+    }
+    footer a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+    }
+    footer a:hover {
+      font-weight: bold;
+    }
+  </style>
+  <script src="jquery-2.1.4.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <h3>#HashNag Settings</h3>
+      <form>
+        <p><input type="radio" name="hashnag-censor" value="remove"> Remove all hashtags</p>
+        <p><input type="radio" name="hashnag-censor" value="delink"> Remove # and links</p>
+        <p><input type="radio" name="hashnag-censor" value="replace"> Replace all hastags with a period</p>
+      </form>
+    </main>
+    <footer>
+      Checkout the full source for #HashNag <a href="https://github.com/tehbmar/HashNag" target="_blank">here</a>
+    </footer>
+    <script src="hashNagPopup.js"></script>
+  </body>
+</html>
